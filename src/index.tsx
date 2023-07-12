@@ -1,10 +1,8 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-
-import "./index.scss";
+import ThemeProvider from "./theme/ThemeProvider";
 
 const domNode = document.getElementById("root");
 const root = createRoot(domNode);
@@ -12,7 +10,9 @@ const root = createRoot(domNode);
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </BrowserRouter>
   // </React.StrictMode>
 );
