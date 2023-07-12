@@ -1,4 +1,18 @@
-import { render } from "react-dom";
-import { Counter } from "./components/counter/Counter";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-render(<div><Counter/></div>, document.getElementById("root"));
+import App from "./App";
+
+import "./index.scss";
+
+const domNode = document.getElementById("root");
+const root = createRoot(domNode);
+
+root.render(
+  // <React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  // </React.StrictMode>
+);
