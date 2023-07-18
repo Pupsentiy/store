@@ -40,6 +40,13 @@ module.exports = {
     "no-underscore-dangle": "off",
     "key-spacing": "off",
     "@typescript-eslint/naming-convention": ["warn"],
+    "max-len": [
+      "error",
+      {
+        code: 100,
+        ignoreComments: true,
+      },
+    ],
     // 'i18next/no-literal-string': ['error', {
     //     markupOnly: true,
     //     onlyAttribute: ['']
