@@ -2,10 +2,34 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-
-import type { Config } from 'jest'
+import path from "path";
+import type { Config } from "jest";
 
 const config: Config = {
+  clearMocks: true,
+  testEnvironment: "jsdom",
+  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+  moduleDirectories: ["node_modules"],
+  modulePaths: ["<rootDir>src"],
+  moduleFileExtensions: [
+    "js",
+    "mjs",
+    "cjs",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node",
+  ],
+  rootDir: "../../",
+  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+  moduleNameMapper: {
+    "\\.(css|scss)$": "identity-obj-proxy",
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -16,22 +40,7 @@ const config: Config = {
   // cacheDirectory: "/tmp/jest_rs",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
-  testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: ['/node_modules/'],
-  moduleDirectories: ['node_modules'],
-  moduleFileExtensions: [
-    'js',
-    'mjs',
-    'cjs',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node'
-  ],
-  rootDir: '../../',
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']
+
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -207,6 +216,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-}
+};
 
-export default config
+export default config;

@@ -1,6 +1,6 @@
 declare module '*.module.scss' {
-  const styles: Record<string, string>
-  export default styles
+  const cls: Record<string, string>
+  export default cls
 }
 
 declare module '*.jpg';

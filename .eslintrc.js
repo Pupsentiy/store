@@ -7,20 +7,26 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "standard-with-typescript",
+
     // 'plugin:i18next/recommended'
   ],
   overrides: [
-    // {
-    //     files: ['**/src/**/*.test.{ts,tsx}'],
-    //     rules: {
-    //         'i18next/no-literal-string': 'off'
-    //     }
-    // }
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
   ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: "latest",
     sourceType: "module",
-    project: ["./tsconfig.json"],
+    tsconfigRootDir: __dirname,
+    project: "./tsconfig.json",
   },
   plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
