@@ -7,17 +7,9 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "standard-with-typescript",
+    'plugin:i18next/recommended'
+  ],
 
-    // 'plugin:i18next/recommended'
-  ],
-  overrides: [
-    {
-      files: ["**/src/**/*.test.{ts,tsx}"],
-      rules: {
-        "i18next/no-literal-string": "off",
-      },
-    },
-  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -53,12 +45,20 @@ module.exports = {
         ignoreComments: true,
       },
     ],
-    // 'i18next/no-literal-string': ['error', {
-    //     markupOnly: true,
-    //     onlyAttribute: ['']
-    // }]
+    'i18next/no-literal-string': ['error', {
+        markupOnly: true,
+        onlyAttribute: ['']
+    }]
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
 };
