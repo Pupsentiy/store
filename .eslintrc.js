@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    "standard-with-typescript",
-    'plugin:i18next/recommended'
-  ],
+  extends: ["plugin:react/recommended", "standard-with-typescript"],
 
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -45,20 +41,8 @@ module.exports = {
         ignoreComments: true,
       },
     ],
-    'i18next/no-literal-string': ['error', {
-        markupOnly: true,
-        onlyAttribute: ['']
-    }]
   },
   globals: {
     __IS_DEV__: true,
   },
-  overrides: [
-    {
-      files: ["**/src/**/*.test.{ts,tsx}"],
-      rules: {
-        "i18next/no-literal-string": "off",
-      },
-    },
-  ],
 };
