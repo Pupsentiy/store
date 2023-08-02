@@ -14,10 +14,10 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       {/* <ThemeSwitcher /> */}
-      <AppLink to={'/'} theme={AppLinkTheme.SECONDARY}>
+      <AppLink to={RoutePath.main} theme={AppLinkTheme.SECONDARY}>
         Главная
       </AppLink>
-      <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>
+      <AppLink to={RoutePath.store} theme={AppLinkTheme.SECONDARY}>
         О сайте
       </AppLink>
     </div>

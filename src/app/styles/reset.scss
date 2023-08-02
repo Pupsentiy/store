@@ -1,10 +1,10 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 h1,
@@ -22,62 +22,59 @@ figcaption,
 blockquote,
 dl,
 dd {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 a,
 a:visited,
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button,
 input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 button,
 input,
-select
+select,
 textarea,
 {
-    font-family: inherit;
-    font-size: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 textarea:focus,
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 img,
 svg,
 video {
-    display: inline-block;
-    vertical-align: top;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
-
-
-
 
 
 button::-moz-focus-inner {
-    padding: 0;
-    border: none;
+  padding: 0;
+  border: none;
 }
 
 label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 legend {
-    display: block;
+  display: block;
 }
