@@ -16,4 +16,5 @@ export const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 export interface ThemeProviderProps {
   children?: ReactNode
+  initialTheme?: Theme
 }

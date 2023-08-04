@@ -35,7 +35,6 @@ export const Button: FC<ButtonProps> = (props) => {
     size = ButtonSize.M,
     ...otherProps
   } = props
-
   const mods: Record<string, boolean> = {
     [styles.square]: square,
     [styles[size]]: true

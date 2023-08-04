@@ -16,7 +16,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: "./tsconfig.json",
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "react-hooks"],
   rules: {
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
@@ -41,6 +41,8 @@ module.exports = {
         ignoreComments: true,
       },
     ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
   globals: {
     __IS_DEV__: true,
