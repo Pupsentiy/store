@@ -7,11 +7,12 @@ import { useTheme } from 'app/providers/ThemeProviders'
 
 const App = () => {
   const { theme } = useTheme()
+  console.log(theme)
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <main>
+        <main className="content-page">
           <AppRouter />
         </main>
       </Suspense>
