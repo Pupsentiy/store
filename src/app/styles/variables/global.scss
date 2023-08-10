@@ -3,7 +3,7 @@
   --font-family-main: consolas, "Times New Roman", serif;
 
   // размеры шрифта
-  --font-size-m: 16px;
+  --font-size-m: 16x;
   --font-line-m: 24px;
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
   --font-size-l: 24px;
@@ -15,10 +15,21 @@
 
   // размеры
   --navbar-height: 50px;
-
+  --input-height: 40px;
+  --input-loginInput: 300px;
   // z - index
   --z-index-modal: 10;
 
+  // border-radius
+  --border-radius-m: 6px;
+
   // цвета
   --overlay-color: rgba(0 0 0 / 60%);
+  --black-color: #000;
+  --grey-color-1: #f0f0f5;
+  --grey-color-2: #e8e8ed;
+  --white-color: #fff;
+  --pink-color-1: #e64c8f;
+  --pink-color-2: #b83d72;
+  --pink-color-3: #93315b;
 }

@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Modal } from 'shared/ui/Modal/Modal'
+import { LoginModal } from 'features/AuthByUsername'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Navbar.module.scss'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface NavbarProps {
   className?: string
@@ -13,8 +13,12 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false)
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal((prev) => !prev)
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false)
+  }, [])
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true)
   }, [])
 
   return (
@@ -30,16 +34,11 @@ export const Navbar = ({ className }: NavbarProps) => {
       <Button
         theme={ButtonTheme.CLEAR}
         className={styles.links}
-        onClick={onToggleModal}
+        onClick={onShowModal}
       >
         Войти
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci
-        animi, corporis cum dicta, eum fuga impedit laborum maiores odio
-        perferendis provident quam quo tenetur veniam vero vitae voluptate
-        voluptatibus?
-      </Modal>
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </div>
   )
 }
