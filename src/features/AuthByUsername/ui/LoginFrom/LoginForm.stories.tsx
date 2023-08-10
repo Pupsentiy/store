@@ -1,17 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Input } from './Input'
+import { LoginForm } from './LoginForm'
 
 const meta = {
-  title: 'shared/Input',
-  component: Input
-} satisfies Meta<typeof Input>
+  title: 'features/LoginForm',
+  component: LoginForm
+} satisfies Meta<typeof LoginForm>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {
-    value: '123123'
-  }
+  args: {}
 }

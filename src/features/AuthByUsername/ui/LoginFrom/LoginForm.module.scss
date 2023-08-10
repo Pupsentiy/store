@@ -1,16 +1,16 @@
 .LoginForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .input {
     background-color: var(--grey-color-1);
     border: 1px solid var(--grey-color-1);
     border-radius: var(--border-radius-m);
-    -webkit-transition-duration: 0.25s;
     transition-duration: 0.25s;
     height: var(--input-height);
     padding: 10px 20px 6px 16px;
-    width: var(--input-loginInput);
+    width: var(--input-login-width);
     margin-top: 10px;
 
     &:hover {
@@ -28,7 +28,6 @@
   .loginBtn {
     margin-top: 15px;
     background-color: var(--pink-color-1);
-    -webkit-transition-duration: 0.25s;
     transition-duration: 0.25s;
     color: var(--white-color);
     border-radius: var(--border-radius-m);
