@@ -2,7 +2,7 @@ import { type ButtonHTMLAttributes, type FC } from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
-import styles from './Button.module.scss'
+import cls from './Button.module.scss'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -35,13 +35,13 @@ export const Button: FC<ButtonProps> = (props) => {
     ...otherProps
   } = props
   const mods: Record<string, boolean> = {
-    [styles.square]: square,
-    [styles[size]]: true
+    [cls.square]: square,
+    [cls[size]]: true
   }
   return (
     <button
       type={type}
-      className={classNames(styles.Button, mods, [className, styles[theme]])}
+      className={classNames(cls.Button, mods, [className, cls[theme]])}
       {...otherProps}
     >
       {children}

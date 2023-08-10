@@ -1,7 +1,8 @@
 import { type FC } from 'react'
-import styles from './PageError.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui/Button/Button'
+
+import cls from './PageError.module.scss'
 
 interface PageErrorProps {
   className?: string
@@ -13,9 +14,9 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
   }
 
   return (
-    <div className={classNames(styles.PageError, {}, [className])}>
+    <div className={classNames(cls.PageError, {}, [className])}>
       <h1>Ошибка приложения</h1>
-      <Button className={styles.button} onClick={reload} type="button">
+      <Button className={cls.button} onClick={reload} type="button">
         Перезагрузить приложение
       </Button>
     </div>
