@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button, ButtonSize, ButtonTheme } from './Button'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProviders'
 
 const meta = {
@@ -92,5 +92,12 @@ export const SquareSizeXL: Story = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.XL
+  }
+}
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    disabled: true
   }
 }
