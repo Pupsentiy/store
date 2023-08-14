@@ -3,10 +3,13 @@ import { createReducerManager } from "app/providers/StoreProvider/config/reducer
 import { userReducer } from "entities/User";
 import { StateSchema } from "./StateSchema";
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     user: userReducer,
-    // loginForm: loginReducer,
   };
   const reducerManager = createReducerManager(rootReducers);
 
