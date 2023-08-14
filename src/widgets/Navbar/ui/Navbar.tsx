@@ -1,12 +1,12 @@
+import { getUserAuthData, userActions } from 'entities/User'
+import { LoginModal } from 'features/AuthByUsername'
 import { useCallback, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { LoginModal } from 'features/AuthByUsername'
-import { getUserAuthData, userActions } from 'entities/User'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 import cls from './Navbar.module.scss'
 
@@ -62,7 +62,9 @@ export const Navbar = ({ className }: NavbarProps) => {
       >
         Войти
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
     </div>
   )
 }
