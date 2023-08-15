@@ -1,4 +1,4 @@
 import { type StateSchema } from 'app/providers/StoreProvider'
 
-export const getLoginUsernameState = (state: StateSchema) =>
+export const getLoginUsername = (state: StateSchema) =>
   state?.loginForm?.username || ''

@@ -9,10 +9,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { getLoginErrorState } from '../../model/selectors/getLoginError/getLoginError'
-import { getLoginIsLoadingState } from '../../model/selectors/getLoginIsLading/getLoginIsLoading'
-import { getLoginPasswordState } from '../../model/selectors/getLoginPassword/getLoginPassword'
-import { getLoginUsernameState } from '../../model/selectors/getLoginUsername/getLoginUsername'
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLading/getLoginIsLoading'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 
@@ -28,14 +28,14 @@ const initialReducers: ReducersList = {
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
   const dispatch = useAppDispatch()
-  const username = useSelector(getLoginUsernameState)
-  const password = useSelector(getLoginPasswordState)
-  const isLoading = useSelector(getLoginIsLoadingState)
-  const error = useSelector(getLoginErrorState)
+  const username = useSelector(getLoginUsername)
+  const password = useSelector(getLoginPassword)
+  const isLoading = useSelector(getLoginIsLoading)
+  const error = useSelector(getLoginError)
 
   const onChangeUsername = useCallback(
     (value: string) => {
-      dispatch(loginActions.setUserName(value))
+      dispatch(loginActions.setUsername(value))
     },
     [dispatch]
   )
