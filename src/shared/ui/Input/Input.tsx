@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void
 }
 
-const MemoInput = (props: InputProps) => {
+export const Input = memo((props: InputProps) => {
   const { className, type = 'text', value, onChange, ...otherProps } = props
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value)
@@ -26,5 +26,4 @@ const MemoInput = (props: InputProps) => {
       {...otherProps}
     />
   )
-}
-export const Input = memo(MemoInput)
+})

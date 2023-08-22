@@ -47,6 +47,7 @@ module.exports = {
       "error",
       { checksVoidReturn: { attributes: false } },
     ],
+    "react/display-name": "off",
   },
   globals: {
     __IS_DEV__: true,

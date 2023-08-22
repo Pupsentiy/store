@@ -1,12 +1,12 @@
 import { getUserAuthData, userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUsername'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { NavbarItemList } from '../../model/item'
+import { NavbarItem } from '../NavBarItem/NavbarItem'
 
 import cls from './Navbar.module.scss'
 
@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const dispatch = useAppDispatch()
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false)
   const authData = useSelector(getUserAuthData)
@@ -48,16 +48,13 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       {/* <ThemeSwitcher /> */}
-      <AppLink to={RoutePath.main} theme={AppLinkTheme.SECONDARY}>
-        Главная
-      </AppLink>
-      <AppLink to={RoutePath.store} theme={AppLinkTheme.SECONDARY}>
-        О сайте
-      </AppLink>
+      {NavbarItemList.map((item, i) => (
+        <NavbarItem item={item} key={i} />
+      ))}
 
       <Button
         theme={ButtonTheme.CLEAR}
-        className={cls.links}
+        className={cls.link}
         onClick={onShowModal}
       >
         Войти
@@ -67,4 +64,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       )}
     </div>
   )
-}
+})
