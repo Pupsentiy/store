@@ -4,7 +4,7 @@ import { type NavBarItemType } from '../../model/item'
 import cls from './NavbarItem.module.scss'
 
 interface NavBarItemProps {
-  item?: NavBarItemType
+  item: NavBarItemType
 }
 
 export const NavbarItem = memo(({ item }: NavBarItemProps) => {

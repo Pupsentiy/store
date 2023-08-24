@@ -1,9 +1,8 @@
-import { type ReactNode } from 'react'
 import { render } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
 import { StoreProvider } from 'app/providers/StoreProvider'
-import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema'
+import { type ReactNode } from 'react'
+import { MemoryRouter } from 'react-router-dom'
 
 export interface componentRenderOptions {
   route?: string

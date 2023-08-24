@@ -2,12 +2,13 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-import path from "path";
 import type { Config } from "jest";
+import path from "path";
 
 const config: Config = {
   globals: {
-    __IS_DEV__: true,
+    _IS_DEV_: true,
+    _API_: "",
   },
   clearMocks: true,
   testEnvironment: "jsdom",

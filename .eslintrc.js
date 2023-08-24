@@ -48,8 +48,11 @@ module.exports = {
       { checksVoidReturn: { attributes: false } },
     ],
     "react/display-name": "off",
+    "no-undef": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
   },
   globals: {
-    __IS_DEV__: true,
+    _IS_DEV_: true,
+    _API_: true,
   },
 };
