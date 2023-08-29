@@ -48,8 +48,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       {/* <ThemeSwitcher /> */}
-      {NavbarItemList.map((item, i) => (
-        <NavbarItem item={item} key={i} />
+      {NavbarItemList.map((item) => (
+        <NavbarItem item={item} key={item.path} />
       ))}
 
       <Button
