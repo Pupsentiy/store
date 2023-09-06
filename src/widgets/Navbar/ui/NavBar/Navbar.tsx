@@ -31,19 +31,19 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout())
   }, [dispatch])
 
-  if (authData) {
-    return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
-        <Button
-          theme={ButtonTheme.CLEAR}
-          className={cls.links}
-          onClick={onLogout}
-        >
-          Выйти
-        </Button>
-      </div>
-    )
-  }
+  // if (authData) {
+  //   return (
+  //     <div className={classNames(cls.Navbar, {}, [className])}>
+  //       <Button
+  //         theme={ButtonTheme.CLEAR}
+  //         className={cls.links}
+  //         onClick={onLogout}
+  //       >
+  //         Выйти
+  //       </Button>
+  //     </div>
+  //   )
+  // }
 
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
@@ -51,14 +51,26 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       {NavbarItemList.map((item) => (
         <NavbarItem item={item} key={item.path} />
       ))}
+      {authData
+        ? (
+        <Button
+          theme={ButtonTheme.CLEAR}
+          className={cls.link}
+          onClick={onLogout}
+        >
+          Выйти
+        </Button>
+          )
+        : (
+        <Button
+          theme={ButtonTheme.CLEAR}
+          className={cls.link}
+          onClick={onShowModal}
+        >
+          Войти
+        </Button>
+          )}
 
-      <Button
-        theme={ButtonTheme.CLEAR}
-        className={cls.link}
-        onClick={onShowModal}
-      >
-        Войти
-      </Button>
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}

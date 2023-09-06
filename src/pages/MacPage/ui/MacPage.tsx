@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const MacPage = () => {
   return <div>MacPage</div>
 }
 
-export default MacPage
+export default memo(MacPage)

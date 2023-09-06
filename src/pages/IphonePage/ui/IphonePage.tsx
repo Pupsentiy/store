@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const IphonePage = () => {
   return <div>IphonePage</div>
 }
 
-export default IphonePage
+export default memo(IphonePage)

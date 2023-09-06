@@ -3,6 +3,7 @@ export interface User {
   username: string
 }
 
-export interface UserShema {
+export interface UserSchema {
   authData?: User
+  mounted?: boolean
 }

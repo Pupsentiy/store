@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const StorePage = () => {
   return <div>О странице</div>
 }
 
-export default StorePage
+export default memo(StorePage)
